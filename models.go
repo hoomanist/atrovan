@@ -28,11 +28,11 @@ type Course struct {
   Code int
   Unit int
   Capacity int
-  Teacher Teacher
+  Teacher Teacher `gorm:"foreignKey:PersonalID"`
 
 }
 
 type Choice struct {
-  Student Student
-  Course Course
+  Student Student `gorm:"foreignKey:UniversityID"`
+  Course Course  `gorm:"foreignKey:Code"`
 }
